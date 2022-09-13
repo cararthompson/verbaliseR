@@ -1,5 +1,3 @@
-
-
 #' Spell out numbers if they are smaller than ten
 #'
 #' @param number Whole number as `numeric` or `integer`, to be turned into text. Numbers 1-10 are always written out in full,
@@ -9,15 +7,17 @@
 #' @param zero_or_no Specify what to print when the number is 0. Defaults to "no". Can be any string.
 #' @param uk_or_us Defaults to UK which adds an "and" between "hundred" and other numbers (e.g. "One hundred and five"). If "US"
 #' is chosen, the "and" is removed (e.g. "One hundred five").
+#' @param big_mark Defaults to "," (e.g. "1,999").
 #'
-#' @return
+#' @return A string
 #' @export
 #'
 #' @examples
 num_to_text <- function(number,
                         sentence_start = FALSE,
                         zero_or_no = "no",
-                        uk_or_us = "UK") {
+                        uk_or_us = "UK",
+                        big_mark = ",") {
 
   # Return numeral if no other conditions are met (x > 10, & not start of sentence or x > 100)
   num_to_print <- number
@@ -30,7 +30,7 @@ num_to_text <- function(number,
 
   if(x > 999) {
     warning("Numbers greater than 1000 are returned as numerals, regardless of their place in the sentence.")
-    num_to_print <- format(x, big.mark = ",")
+    num_to_print <- format(x, big.mark = big_mark)
   }
 
   ones <- c("one", "two", "three", "four",

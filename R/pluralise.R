@@ -7,8 +7,12 @@
 #' @param add_or_swap Choose between `add` (add the plural form (e.g. "s") onto the end; e.g. `house`
 #' becomes `houses`) and `swap` (swap for the plural form; e.g. `mouse` becomes `mice`)
 #' @param include_number Logical. If `TRUE`, the number will be turned into text, as per `num_to_text()` (if it is a whole number, )
-#' @param sentence_start
-#' @param zero_or_no
+#' @param sentence_start Logical. Defaults to `FALSE`, which results in only numbers 1-10 being written out in full.
+#' If `TRUE`, numbers 11-999 are written out in full if included. (If `include_number` is `FALSE`, the first letter of `word` is capitalised.)
+#' @param zero_or_no Prefered string to use where count == 0. Defaults to "no". Can be anything.
+#' @param uk_or_us Only used if `include_number` == `TRUE`. Defaults to UK which adds an "and" between "hundred" and other numbers
+#' (e.g. "One hundred and five"). If "US" is chosen, the "and" is removed (e.g. "One hundred five").
+#' @param big_mark Passed to `num_to_text`. Defaults to "," (e.g. "1,999")
 #'
 #' @return A word which is pluralised or not based on the value of `count`
 #' @export
@@ -20,7 +24,9 @@ pluralise <- function(word,
                       add_or_swap = "add",
                       include_number = TRUE,
                       sentence_start = FALSE,
-                      zero_or_no = "no"){
+                      zero_or_no = "no",
+                      uk_or_us = "UK",
+                      big_mark = ","){
 
   if(count == 1) {
     output_string <- word
@@ -38,7 +44,8 @@ pluralise <- function(word,
     output_string <- paste(
       num_to_text(number = count,
                   sentence_start = sentence_start,
-                  zero_or_no = zero_or_no),
+                  zero_or_no = zero_or_no,
+                  uk_or_us = uk_or_us),
       output_string
     )
   }

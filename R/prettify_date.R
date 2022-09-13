@@ -1,6 +1,6 @@
 #' Render ordinal dates in UK or US style
 #'
-#' @param my_date The date to use. It must be either be of class `Date` or a string written as "YYYY-MM-DD" or "YYYY/MM/DD")
+#' @param date_to_format The date to use. It must be either be of class `Date` or a string written as "YYYY-MM-DD" or "YYYY/MM/DD")
 #' @param uk_or_us Defaults to "UK", which results in outputs like "12th September 2022"; if
 #' "US", the output resembles "September 12th, 2022".
 #' @param formal_or_informal Defaults to "informal", so the ordinals are included (e.g. "st", "nd", "rd", "th").
