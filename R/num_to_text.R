@@ -7,6 +7,8 @@
 #' Numbers greater than 1000 are returned as numerals.
 #' @param sentence_start Logical. If `TRUE`, numbers below 100 are written out in full, and their first letter is capitalised.
 #' @param zero_or_no Specify what to print when the number is 0. Defaults to "no". Can be any string.
+#' @param uk_or_us Defaults to UK which adds an "and" between "hundred" and other numbers (e.g. "One hundred and five"). If "US"
+#' is chosen, the "and" is removed (e.g. "One hundred five").
 #'
 #' @return
 #' @export
@@ -19,14 +21,17 @@ num_to_text <- function(number,
 
   # Return numeral if no other conditions are met (x > 10, & not start of sentence or x > 100)
   num_to_print <- number
+  uk_or_us <- toupper(uk_or_us)
 
   x <- as.numeric(number)
   if (is.na(x)) stop(paste0(number, " is not a number."))
 
-  if(x %% 1 != 0) warning(paste0(number, " is not a whole number. Use numerals instead of spelling it out."))
+  if(x %% 1 != 0) warning(paste0(number, " is not a whole number. It is kept as a numeral."))
 
-  if(x > 1000) warning("Numbers greater than 1000 will be returned as numerals,
-                     regardless of their place in the sentence.")
+  if(x > 999) {
+    warning("Numbers greater than 1000 are returned as numerals, regardless of their place in the sentence.")
+    num_to_print <- format(x, big.mark = ",")
+  }
 
   ones <- c("one", "two", "three", "four",
             "five", "six", "seven", "eight", "nine")
