@@ -6,6 +6,9 @@
 #' Can be anything. See `add_or_swap`.
 #' @param add_or_swap Choose between `add` (add the plural form (e.g. "s") onto the end; e.g. `house`
 #' becomes `houses`) and `swap` (swap for the plural form; e.g. `mouse` becomes `mice`)
+#' @param include_number Logical. If `TRUE`, the number will be turned into text, as per `num_to_text()` (if it is a whole number, )
+#' @param sentence_start
+#' @param zero_or_no
 #'
 #' @return A word which is pluralised or not based on the value of `count`
 #' @export
@@ -16,17 +19,30 @@ pluralise <- function(word,
                       plural = "s",
                       add_or_swap = "add",
                       include_number = TRUE,
-                      sentence_start = FALSE){
+                      sentence_start = FALSE,
+                      zero_or_no = "no"){
 
   if(count == 1) {
-    output_word <- word
+    output_string <- word
   } else {
-    output_word <- ifelse(add_or_swap == "swap",
+    output_string <- ifelse(add_or_swap == "swap",
                           plural,
                           paste0(word, plural))
   }
 
+  if(include_number == FALSE & sentence_start == TRUE) {
+    output_string <- stringr::str_to_sentence(output_string)
+  }
 
+  if(include_number == TRUE) {
+    output_string <- paste(
+      num_to_text(number = count,
+                  sentence_start = sentence_start,
+                  zero_or_no = zero_or_no),
+      output_string
+    )
+  }
 
+  return(output_string)
 
 }
