@@ -45,7 +45,8 @@ pluralise <- function(word,
       num_to_text(number = count,
                   sentence_start = sentence_start,
                   zero_or_no = zero_or_no,
-                  uk_or_us = uk_or_us),
+                  uk_or_us = uk_or_us,
+                  big_mark = big_mark),
       output_string
     )
   }
