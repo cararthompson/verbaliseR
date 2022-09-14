@@ -250,4 +250,5 @@ verbaliseR::pluralise("unit", 12345.67,
     [here](https://github.com/cararthompson/verbaliseR/issues).
 -   Open to PRs from rstats users who want to make `num_to_text` and
     `prettify_date()` work in different languages.
-    <!-- - Logo by [Jenny Legrand Photography](https://www.jennylegrandphotography.com/services-1) -->
+-   Logo by [Jenny Legrand
+    Photography](https://www.jennylegrandphotography.com/)
