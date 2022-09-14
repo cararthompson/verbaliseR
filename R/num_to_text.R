@@ -41,7 +41,7 @@ num_to_text <- function(number,
             "sixty", "seventy", "eighty", "ninety")
 
   if(x == 0) num_to_print <- zero_or_no
-  if(x !=0  & x < 10) num_to_print <- ones[x]
+  if(x !=0  & x %% 1 == 0 & x < 10) num_to_print <- ones[x]
   if(x == 10) num_to_print <- "ten"
   if(x == 100) num_to_print <- "one hundred"
   if(x == 1000) num_to_print <- "one thousand"
