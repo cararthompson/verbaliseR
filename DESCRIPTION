@@ -2,7 +2,10 @@ Package: verbaliseR
 Title: Make your text mighty fine
 Version: 0.1
 Authors@R: 
-    person("Cara", "Thompson", , "cara.r.thompson@gmail.com", role = c("aut", "cre"),
+    person(given = "Cara",
+           family = "Thompson",
+           role = c("aut", "cre"),
+           email = "cara.r.thompson@gmail.com",
            comment = c(ORCID = "0000-0002-6472-5073"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
