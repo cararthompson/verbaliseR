@@ -1,9 +1,9 @@
 Package: verbaliseR
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Make your text mighty fine
+Version: 0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Cara", "Thompson", , "cara.r.thompson@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6472-5073"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
