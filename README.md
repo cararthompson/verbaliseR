@@ -194,7 +194,8 @@ also retains the number, applying the rules of `num_to_text()` to it,
 unless specified otherwise. The flexibility of this function means it
 can be used in any language, but since numbers are currently returned
 only in English, users of other languages will need to specify
-`include_number = FALSE` for now.
+`include_number = FALSE` for now if the number is between 1 and 10 or if
+`sentence_start` is `TRUE`.
 
 ``` r
 # The default plural is an s tagged onto the end of the word ...

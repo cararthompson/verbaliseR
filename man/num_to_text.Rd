@@ -34,6 +34,6 @@ Spell out numbers if they are smaller than ten
 }
 \examples{
 num_to_text(3)
-num_to_text(333, sentence_start = TRUE)#'
+num_to_text(333, sentence_start = TRUE)
 
 }
