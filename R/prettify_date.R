@@ -9,7 +9,7 @@
 #' @return A string (e.g. "12th September 2022")
 #' @export
 #'
-#' @examples
+#' @examples prettify_date(Sys.Date(), "UK", "informal")
 prettify_date <- function(date_to_format = Sys.Date(),
                           uk_or_us = "UK",
                           formal_or_informal = "informal") {

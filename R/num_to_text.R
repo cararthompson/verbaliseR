@@ -12,7 +12,9 @@
 #' @return A string
 #' @export
 #'
-#' @examples
+#' @examples num_to_text(3)
+#' num_to_text(333, sentence_start = TRUE)#'
+#'
 num_to_text <- function(number,
                         sentence_start = FALSE,
                         zero_or_no = "no",

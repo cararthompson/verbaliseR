@@ -25,3 +25,6 @@ A string (e.g. "12th September 2022")
 \description{
 Render ordinal dates in UK or US style
 }
+\examples{
+prettify_date(Sys.Date(), "UK", "informal")
+}

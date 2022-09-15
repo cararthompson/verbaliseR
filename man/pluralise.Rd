@@ -45,3 +45,9 @@ A word which is pluralised or not based on the value of \code{count}
 \description{
 Pluralise words if their accompanying number is not 1
 }
+\examples{
+pluralise("penguin", 3)
+pluralise("bateau", 1234, "x")
+pluralise("sheep", 333, "sheep", add_or_swap = TRUE, sentence_start =  TRUE)
+
+}

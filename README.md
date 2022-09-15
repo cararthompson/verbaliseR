@@ -48,11 +48,19 @@ listed in prose. The link word can be anything you like, and there is an
 option to add an Oxford comma if desired. Here are a few examples:
 
 ``` r
-# The default returns a list with "and"
+# The default returns a list with "and" ...
 verbaliseR::listify(c("a", "b", "c"))
 ```
 
     ## [1] "a, b and c"
+
+``` r
+# to which you can choose add an Oxford comma
+verbaliseR::listify(c("a", "b", "c"),
+                    oxford_comma = TRUE)
+```
+
+    ## [1] "a, b, and c"
 
 ``` r
 # You can modify the linking word...
@@ -95,24 +103,24 @@ UK/US style and formal/informal (without / with the ordinals)
 verbaliseR::prettify_date(Sys.Date())
 ```
 
-    ## [1] "14th September 2022"
+    ## [1] "15th September 2022"
 
 ``` r
 # Can also do US style
-verbaliseR::prettify_date("2022/09/14", 
+verbaliseR::prettify_date("2022/09/15", 
                           uk_or_us = "US")
 ```
 
-    ## [1] "September 14th, 2022"
+    ## [1] "September 15th, 2022"
 
 ``` r
 # To remove the ordinals, select formal_or_informal = "formal"
-verbaliseR::prettify_date("2022-09-14", 
+verbaliseR::prettify_date("2022-09-15", 
                           uk_or_us = "US", 
                           formal_or_informal = "formal")
 ```
 
-    ## [1] "September 14, 2022"
+    ## [1] "September 15, 2022"
 
 ### `num_to_text()`
 
@@ -243,6 +251,19 @@ verbaliseR::pluralise("unit", 12345.67,
 ```
 
     ## [1] "12 345.67 units"
+
+### `restore_capitals()`
+
+Takes a string in which some or all capitalisation has been lost, and
+restores capitals in the specified items.
+
+``` r
+x <- "Should i tell c-3po the french call him z-6po?"
+
+verbaliseR::restore_capitals(x, c("I", "C-3PO", "French", "Z-6PO"))
+```
+
+    ## [1] "Should I tell C-3PO the French call him Z-6PO?"
 
 ## Further information
 

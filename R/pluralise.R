@@ -17,7 +17,10 @@
 #' @return A word which is pluralised or not based on the value of `count`
 #' @export
 #'
-#' @examples
+#' @examples pluralise("penguin", 3)
+#' pluralise("bateau", 1234, "x")
+#' pluralise("sheep", 333, "sheep", add_or_swap = TRUE, sentence_start =  TRUE)
+#'
 pluralise <- function(word,
                       count,
                       plural = "s",
