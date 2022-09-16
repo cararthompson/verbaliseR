@@ -30,7 +30,7 @@ num_to_text <- function(number,
 
   if(x %% 1 != 0) warning(paste0(number, " is not a whole number. It is kept as a numeral."))
 
-  if(x > 999) {
+  if(x %% 1 == 0 & x > 999) {
     warning("Numbers greater than 1000 are returned as numerals, regardless of their place in the sentence.")
     num_to_print <- format(x, big.mark = big_mark)
   }

@@ -5,7 +5,11 @@ output: github_document
 
 ## Make your text mighty fine
 
-**{verbaliseR}** is a package with a collection of functions that make it easier to turn analysis outputs into sentences. Here's a quick example:
+<center>
+![](inst/figures/logo.png){width=33%}
+</center>
+
+**{verbaliseR}** is a collection of functions that make it easier to turn R analysis outputs into sentences. Here's a quick example:
 
 ```{r, warning=FALSE, message=FALSE}
 library(dplyr)
@@ -101,7 +105,7 @@ Used within `pluralise()` this function can also be useful on its own. It takes 
 
 The big mark can be modified. 
 
-```{r, warning=FALSE, message=FALSE}
+```{r}
 verbaliseR::num_to_text(3)
 
 # 0 defaults to "no", but can be changed to anything
@@ -111,9 +115,13 @@ verbaliseR::num_to_text(0, zero_or_no = "none")
 verbaliseR::num_to_text(3, 
                         sentence_start = TRUE)
 
+# Only whole numbers are returned as text; a warning is issued accordingly
 verbaliseR::num_to_text(1.25, 
                         sentence_start = TRUE)
 
+# Numbers greater than 1000 are not returned as text even if they are at the start of a sentence; 
+# a warning is issued accordingly
+# They are however formatted for readability
 verbaliseR::num_to_text(3333, 
                         sentence_start = TRUE)
 

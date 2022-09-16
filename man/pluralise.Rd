@@ -17,7 +17,7 @@ pluralise(
 )
 }
 \arguments{
-\item{word}{A word which should be returned as plural if \code{count} is equal to 0 or greater than 1.}
+\item{word}{A word which should be returned as plural if \code{count} is not equal to 1.}
 
 \item{count}{A number to apply to \code{word}}
 

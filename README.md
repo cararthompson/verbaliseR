@@ -3,9 +3,12 @@ verbaliseR
 
 ## Make your text mighty fine
 
-**{verbaliseR}** is a package with a collection of functions that make
-it easier to turn analysis outputs into sentences. Here’s a quick
-example:
+<center>
+<img src="inst/figures/logo.png" style="width:33.0%" />
+</center>
+
+**{verbaliseR}** is a collection of functions that make it easier to
+turn R analysis outputs into sentences. Here’s a quick example:
 
 ``` r
 library(dplyr)
@@ -103,7 +106,7 @@ UK/US style and formal/informal (without / with the ordinals)
 verbaliseR::prettify_date(Sys.Date())
 ```
 
-    ## [1] "15th September 2022"
+    ## [1] "16th September 2022"
 
 ``` r
 # Can also do US style
@@ -165,16 +168,26 @@ verbaliseR::num_to_text(3,
     ## [1] "Three"
 
 ``` r
+# Only whole numbers are returned as text; a warning is issued accordingly
 verbaliseR::num_to_text(1.25, 
                         sentence_start = TRUE)
 ```
 
+    ## Warning in verbaliseR::num_to_text(1.25, sentence_start = TRUE): 1.25 is not a
+    ## whole number. It is kept as a numeral.
+
     ## [1] "1.25"
 
 ``` r
+# Numbers greater than 1000 are not returned as text even if they are at the start of a sentence; 
+# a warning is issued accordingly
+# They are however formatted for readability
 verbaliseR::num_to_text(3333, 
                         sentence_start = TRUE)
 ```
+
+    ## Warning in verbaliseR::num_to_text(3333, sentence_start = TRUE): Numbers greater
+    ## than 1000 are returned as numerals, regardless of their place in the sentence.
 
     ## [1] "3,333"
 
@@ -184,6 +197,10 @@ verbaliseR::num_to_text(3333,
                         sentence_start = TRUE, 
                         big_mark = " ")
 ```
+
+    ## Warning in verbaliseR::num_to_text(3333, sentence_start = TRUE, big_mark = " "):
+    ## Numbers greater than 1000 are returned as numerals, regardless of their place in
+    ## the sentence.
 
     ## [1] "3 333"
 
@@ -243,7 +260,7 @@ verbaliseR::pluralise("unit", 12345.67,
                       sentence_start = TRUE)
 ```
 
-    ## [1] "12,345.67 units"
+    ## [1] "12345.67 units"
 
 ``` r
 # ... with a cusomisable big mark
@@ -251,7 +268,7 @@ verbaliseR::pluralise("unit", 12345.67,
                       big_mark = " ")
 ```
 
-    ## [1] "12 345.67 units"
+    ## [1] "12345.67 units"
 
 ### `restore_capitals()`
 
