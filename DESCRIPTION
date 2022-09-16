@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "cara.r.thompson@gmail.com",
            comment = c(ORCID = "0000-0002-6472-5073"))
-Description: What the package does (one paragraph).
+Description: {verbaliseR} is a collection of functions that make it easier to turn R analysis outputs into sentences.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
