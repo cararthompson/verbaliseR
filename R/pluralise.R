@@ -1,6 +1,6 @@
 #' Pluralise words if their accompanying number is not 1
 #'
-#' @param word A word which should be returned as plural if `count` is equal to 0 or greater than 1.
+#' @param word A word which should be returned as plural if `count` is not equal to 1.
 #' @param count A number to apply to `word`
 #' @param plural How to make the plural; defaults to an "s" which is added at the end of the word.
 #' Can be anything. See `add_or_swap`.
