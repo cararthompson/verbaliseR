@@ -1,11 +1,9 @@
 verbaliseR
 ================
 
-## Make your text mighty fine
+![](inst/figures/logo-social.png)
 
-<center>
-<img src="inst/figures/logo.png" style="width:33.0%" />
-</center>
+## Make your text mighty fine
 
 **{verbaliseR}** is a collection of functions that make it easier to
 turn R analysis outputs into sentences. Here’s a quick example:
