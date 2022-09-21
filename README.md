@@ -1,6 +1,11 @@
 verbaliseR
 ================
 
+<!-- badges: start -->
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/verbaliseR)](https://cran.r-project.org/package=verbaliseR)
+![](http://cranlogs.r-pkg.org/badges/grand-total/verbaliseR?color=#0B3748)
+<!-- badges: end -->
+
 ![](inst/figures/logo-social.png)
 
 ## Make your text mighty fine
@@ -33,10 +38,14 @@ paste0("There are ",
 Install from GitHub:
 
 ``` r
-# If you don't already have the {remotes} package installed:
-install.package("remotes")
+# From CRAN
+install.packages("verbaliseR")
 
-# Then:
+# From Github...
+# ... if you don't already have the {remotes} package installed:
+install.packages("remotes")
+
+# ... then:
 remotes::install_github("cararthompson/verbaliseR")
 ```
 
@@ -104,7 +113,7 @@ UK/US style and formal/informal (without / with the ordinals)
 verbaliseR::prettify_date(Sys.Date())
 ```
 
-    ## [1] "16th September 2022"
+    ## [1] "21st September 2022"
 
 ``` r
 # Can also do US style

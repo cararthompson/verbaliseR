@@ -1,5 +1,5 @@
 Package: verbaliseR
-Title: Make your text mighty fine
+Title: Make your Text Mighty Fine
 Version: 0.1
 Authors@R: 
     person(given = "Cara",
@@ -7,9 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "cara.r.thompson@gmail.com",
            comment = c(ORCID = "0000-0002-6472-5073"))
-Description: {verbaliseR} is a collection of functions that make it easier to turn R analysis outputs into sentences.
+Description: Turn R analysis outputs into full sentences, by writing vectors into in-sentence lists, pluralising words conditionally, spelling out numbers if they are at the start of sentences, writing out dates in full following US or UK style, and managing capitalisations in tidy data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+URL: https://github.com/cararthompson/verbaliseR
+BugReports: https://github.com/cararthompson/verbaliseR/issues
+Maintainer: Cara Thompson <cara.r.thompson@gmail.com>
 Imports: stringr

@@ -32,10 +32,14 @@ paste0("There are ",
 Install from GitHub:
 
 ```{r, eval = FALSE}
-# If you don't already have the {remotes} package installed:
-install.package("remotes")
+# From CRAN
+install.packages("verbaliseR")
 
-# Then:
+# From Github...
+# ... if you don't already have the {remotes} package installed:
+install.packages("remotes")
+
+# ... then:
 remotes::install_github("cararthompson/verbaliseR")
 
 ```
