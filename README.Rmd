@@ -161,12 +161,16 @@ verbaliseR::pluralise("penguin", 333,
 verbaliseR::pluralise("penguin", 333)
 
 # Numbers above 1000 are never written out in full but are formatted for readability ...
-verbaliseR::pluralise("unit", 12345.67,
+verbaliseR::pluralise("penguin", 33333,
                       sentence_start = TRUE)
 
-# ... with a cusomisable big mark
-verbaliseR::pluralise("unit", 12345.67,
+# ... with a customisable big mark to allow for different conventions
+verbaliseR::pluralise("penguin", 33333,
                       big_mark = " ")
+
+# Numbers with decimals are always left as numerals and aren't formatted
+verbaliseR::pluralise("unit", 12345.67)
+
 
 ```
 

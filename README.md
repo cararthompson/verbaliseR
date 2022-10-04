@@ -113,7 +113,7 @@ UK/US style and formal/informal (without / with the ordinals)
 verbaliseR::prettify_date(Sys.Date())
 ```
 
-    ## [1] "21st September 2022"
+    ## [1] "15th September 2022"
 
 ``` r
 # Can also do US style
@@ -263,16 +263,23 @@ verbaliseR::pluralise("penguin", 333)
 
 ``` r
 # Numbers above 1000 are never written out in full but are formatted for readability ...
-verbaliseR::pluralise("unit", 12345.67,
+verbaliseR::pluralise("penguin", 33333,
                       sentence_start = TRUE)
 ```
 
-    ## [1] "12345.67 units"
+    ## [1] "33,333 penguins"
 
 ``` r
-# ... with a cusomisable big mark
-verbaliseR::pluralise("unit", 12345.67,
+# ... with a customisable big mark to allow for different conventions
+verbaliseR::pluralise("penguin", 33333,
                       big_mark = " ")
+```
+
+    ## [1] "33 333 penguins"
+
+``` r
+# Numbers with decimals are always left as numerals and aren't formatted
+verbaliseR::pluralise("unit", 12345.67)
 ```
 
     ## [1] "12345.67 units"
